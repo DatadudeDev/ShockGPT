@@ -48,9 +48,9 @@ ________________________________________________________________________________
 SETUP INSTRUCTIONS: 
 
 1. Install Python3 on any operating system which supports it (Windows, Linux, OS X)
-2. Place the Flask backend file (app.py) in any directory ---> Example: C:/User/ShockGPT/app.py
-3. Create a folder called 'templates' in the same directory as the Flask backend file ---> Example: C:/User/ShockGPT/templates
-4. Place the HTML Webpage (home.html) in the templates directory you created. --> Example: C:/User/ShockGPT/templates/home/html
+2. Place the Flask Backend Server file (app.py) in any directory ---> Example: C:/User/ShockGPT/app.py
+3. Create a folder called 'templates' in the same directory as the Flask backend file ---> Example: C:/User/ShockGPT/templates/
+4. Place the HTML Webpage (home.html) in the templates directory you created. --> Example: C:/User/ShockGPT/templates/home.html
 5. In Terminal or Command Prompt, Navigate to the directory where the Flask backend server file is located ---> Example: C:/User/ShockGPT/
 6. Run the following command as a user (not root): 'python3 app.py'
 7. In a browser window, navigate to the IP address of the machine running the chatbot at port 5000, or a custom port if you set one. ---> Example: 192.168.3.4:5000
