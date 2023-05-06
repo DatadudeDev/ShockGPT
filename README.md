@@ -5,6 +5,12 @@ ShockGPT is named as such because it will answer every question, including the q
 
 _______________________________________________________________________________________________________________________________________________________________________
 
+Example:
+
+![image](https://user-images.githubusercontent.com/132722687/236593902-f57bf1ba-0959-4ac6-a7f0-4456c09754c6.png)
+
+_______________________________________________________________________________________________________________________________________________________________________
+
 Key Features: 
 
 > A simple web interface with a chat box linked to OpenAI's ChatGPT via their API. 
