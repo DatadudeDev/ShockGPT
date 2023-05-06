@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with OpenAI GPT-4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.>
+    <script>
+        $(document).ready(function() {
+            // Get the chatbox element and the chat history element
+            var chatbox = $("#chatbox");
+            var chatHistory = $("#chat-history");
+
+            // Define a function to add a message to the chat history
+            function addMessageToHistory(message, isUser) {
+                var messageClass = isUser ? "user-message" : "openai-message";
+                var messageElement = $("<div>").addClass(messageClass).text(mes>
+                chatHistory.append(messageElement);
+            }
+            
+            // Keep track of the conversation history
+            var conversationHistory = [];
+
+            // Handle form submission when the user hits "Enter"
+            $("#chat-form").on("submit", function(event) {
+                event.preventDefault();
+                var userInput = $("#user-input").val();
+                if (userInput) {
+                    addMessageToHistory(userInput, true);
+                    $("#user-input").val("");
+                    
+                    
+                    // Send the user input and the conversation history to the >
+                    $.ajax({
+                        url: "/get_response",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify({userInput: userInput, conversatio>
+                        success: function(response) {
+                            // Add the OpenAI response to the chat history
+                            addMessageToHistory(response, false);
+                            // Scroll to the bottom of the chat history
+                            chatbox.scrollTop(chatbox[0].scrollHeight);
+                            // Update the conversation history
+                            conversationHistory.push(userInput);
+                            conversationHistory.push(response);
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle any errors
+                            console.log("Error:", error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-color: #191B1B;
+            color: white;
+        }
+        #chatbox {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            border: 1px solid white;
+            padding: 10px;
+        }
+        #chat-history {
+            height: 700px;
+            overflow-y: scroll;
+            text-align: left;
+        }
+        .user-message {
+            text-align: left;
+            color: green;
+        }
+        .openai-message {
+            text-align: left;
+            color: red;
+        }
+        #user-input {
+            width: 80%;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid white;
+            background-color: #191B1B;
+            color: white;
+        }
+        button[type="submit"] {
+            padding: 5px 10px;
+            margin: 5px;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: white;
+            background-color: blue;
+            cursor: pointer;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with OpenAI GPT-4</h1>
+    <h2>Concise answers to specific questions</h2>
+    <div id="chatbox">
+        <div id="chat-history"></div>
+        <form id="chat-form">
+            <input type="text" color = white id="user-input" placeholder="Type >
+            <button type="submit
+                    
+                    
