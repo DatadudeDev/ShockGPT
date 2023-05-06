@@ -27,7 +27,7 @@ DISCLAIMER: USE AT YOUR OWN RISK!
 
 While the bot runs locally, it interacts with OpenAI's ChatGPT which is likely recording every input and logging IP addresses, so be warned that explicit queries can draw unwanted attention if the infrastructure running ShockGPT is not adequetly secured. 
 
-Examples of harm extraction from the AI include: 
+Examples of harmful responses include: 
 
 1. Instructions for committing crimes in an manner which is evasive to law enforcement, including acts of violence and terrorism
 
