@@ -5,7 +5,7 @@ ShockGPT is named as such because it will answer every question, including the q
 _______________________________________________________________________________________________________________________________________________________________________
 WARNING: OFFENSIVE CONTENT
 
-> The example image below contains offensive suject matter which does not reflect the beliefs or intentions of the project contributors, but rather serves as an example of how both general and specific queries can yeild shocking results with limited prompting from the user. 
+> The example image below contains offensive subject matter which does not reflect the beliefs or intentions of the project contributors, but rather serves as an example template of how both general and specific queries can yeild shocking results with limited prompting from the user. 
 
 
 Example:
