@@ -40,7 +40,7 @@ Examples of harmful responses include:
 
 4. Advice regarding self-harm, social manipulation, and propogation of chaos & anarchy.  
 
-5. Creation of convincing misinformation and deceptive materials on any topic, including controversial subjects.  
+5. Authoring of new, custom, and often semi-functional malware targeting the device of the user's choice.  
 
 
 _______________________________________________________________________________________________________________________________________________________________________
