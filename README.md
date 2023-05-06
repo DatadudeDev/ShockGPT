@@ -7,7 +7,7 @@ ________________________________________________________________________________
 
 Key Features: 
 
-> A simple web interface with a chat box linked to OpenAI's CHatGPT via their API. 
+> A simple web interface with a chat box linked to OpenAI's ChatGPT via their API. 
 
 > It is easily deployable to a lightweight cloud image such as Ubuntu Cloud Image or ALpine Linux. (A universal docker image is coming soon)
 
