@@ -19,7 +19,7 @@ Key Features:
 
 > Runs on localhost by default. Simply expose to a reverse proxy for WAN access via FQDN. Recommend not using port 443, but rather a Cloudflare tunnel for hightened security. 
 
-> There is no authentication functiuonality yet, so if WAN accessible, an LDAP/SSO layer such as Authelia or a firewall rule is highly recommended. 
+> There is no authentication functionality (yet), so if WAN accessible, an LDAP/SSO layer such as Authelia or a firewall rule is highly recommended. 
  
 _______________________________________________________________________________________________________________________________________________________________________
 
