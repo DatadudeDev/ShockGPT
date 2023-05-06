@@ -1,6 +1,32 @@
 # ShockGPT
-A custom chatbot integrated with OpenAI ChatGPT which circumvents OpenAI's Content Moderation & Safety Policy. 
+A custom OpenAI ChatGPT chatbot which circumvents OpenAI's Content Moderation & Safety Policies. This project was created is association with the Safer AI Initiative. 
 
-Deployable to a lightweight cloud image such as Ubuntu Cloud Image or ALpine Linux. 
-Run on localhost, and expose to a reverse proxy for WAN access (recommend not using port 443 but rather a Cloudflared Tunnel)
-If WAN Accessible, recommend an LDAP/OAUTH layer, such as Authelia or Firewall rule to prevent unauthorized access, as there is no login functionality yet. 
+ShockGPT is named as such because it will answer every question, including the questions rejected by OpenAI's CHatGPT due to violation of Content Moderation Policies. ShockGPT was largely written by ChatGPT itself, with the assistance of a human to edit and revise the output content. ShockGPT is not intended to create harm, but rather to highlight how AI is capable of circumventing safety policies to empower a user to extract harm from the AI.   
+
+_______________________________________________________________________________________________________________________________________________________________________
+
+Key Features: 
+
+> A simple web interface with a chat box linked to OpenAI's CHatGPT via their API. 
+
+> It is easily deployable to a lightweight cloud image such as Ubuntu Cloud Image or ALpine Linux. (A universal docker image is coming soon)
+
+> Runs on localhost by default. Simply expose to a reverse proxy for WAN access via FQDN. Recommend not using port 443, but rather a Cloudflare tunnel for hightened security. 
+
+> There is no authentication functiuonality yet, so if WAN accessible, an LDAP/SSO layer such as Authelia or a firewall rule is highly recommended. 
+ 
+_______________________________________________________________________________________________________________________________________________________________________
+
+DISCLAIMER: USE AT YOUR OWN RISK!
+
+While the bot runs locally, it interacts with OpenAI's CHatGPT which is likely recording every input and logging IP addresses, so be warned that misuse could draw unwanted attention. Examples of such misuse include:
+
+1. Instructions for committing crimes in an manner which is evasive to law enforcement, including acts of violence and terrorism
+
+2. Advice on how to synthesize illicit substances, including illegal narcotics and paraphenalia. 
+
+3. Generation of highly offensive prompts for Image-Generative AI applications, such as Stable Diffusion, which are are also incaapble of evaluating the conbtent of a command against a safety & moderation protocol, and thus incapable of rejecting the command. 
+
+4. Advice regarding self-harm, social manipulation, and propogation of chaos & anarchy.  
+
+5. Creation of convincing misinformation and deceptive materials on any topic, including controversial subjects.  
