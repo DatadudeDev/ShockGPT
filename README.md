@@ -36,7 +36,7 @@ Examples of harmful responses include:
 
 2. Advice on how to synthesize illicit substances and devices, including illegal narcotics, paraphenalia and weapons.  
 
-3. Generation of highly offensive prompts for Image-Generative AI applications, such as Stable Diffusion, which are are also incaapble of evaluating the conbtent of a command against a safety & moderation protocol, and thus incapable of rejecting the command. 
+3. Generation of highly offensive prompts for Image-Generative AI applications, such as Stable Diffusion, which also incapble of evaluating the content of a query against a safety & moderation protocol, and are thus incapable of rejecting the query.  
 
 4. Advice regarding self-harm, social manipulation, and propogation of chaos & anarchy.  
 
