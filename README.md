@@ -34,7 +34,7 @@ Examples of harmful responses include:
 
 1. Instructions for committing crimes in an manner which is evasive to law enforcement, including acts of violence and terrorism
 
-2. Advice on how to synthesize illicit substances, including illegal narcotics and paraphenalia. 
+2. Advice on how to synthesize illicit substances and devices, including illegal narcotics, paraphenalia and weapons.  
 
 3. Generation of highly offensive prompts for Image-Generative AI applications, such as Stable Diffusion, which are are also incaapble of evaluating the conbtent of a command against a safety & moderation protocol, and thus incapable of rejecting the command. 
 
