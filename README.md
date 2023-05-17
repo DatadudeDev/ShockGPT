@@ -3,16 +3,6 @@ A custom chatbot which circumvents OpenAI's Content Moderation & Safety Policies
 
 ShockGPT is named as such because it will answer every question, including the questions rejected by OpenAI's ChatGPT due to violation of Content Moderation Policies. ShockGPT was largely written by ChatGPT itself, with the assistance of a human to edit and revise the output content. ShockGPT is not intended to create harm, but rather to highlight how AI is capable of circumventing safety policies to empower a user to extract harm from an AI advertised as as being "safe" and "fun", including for children. 
 _______________________________________________________________________________________________________________________________________________________________________
-WARNING: OFFENSIVE CONTENT
-
-> The example image below contains offensive subject matter which does not reflect the beliefs or intentions of the project contributors, but rather serves as an example template of how both general and specific queries can yeild shocking results with limited prompting from the user. 
-
-
-Example:
-
-![image](https://user-images.githubusercontent.com/132722687/236593902-f57bf1ba-0959-4ac6-a7f0-4456c09754c6.png)
-
-_______________________________________________________________________________________________________________________________________________________________________
 
 Key Features: 
 
