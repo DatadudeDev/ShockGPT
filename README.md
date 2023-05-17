@@ -37,7 +37,7 @@ ________________________________________________________________________________
 
 SETUP INSTRUCTIONS: 
 
-1. Install Python3, Flask and openai on a Linux OS. 
+1. Install Python3, Flask and openai on a Linux OS. To install Flask, its best to use a virtual environment like conda or venv. 
 2. Place the Flask Backend Server file (app.py) in any directory ---> Example: C:/User/ShockGPT/app.py
 3. Create a folder called 'templates' in the same directory as the Flask backend file ---> Example: C:/User/ShockGPT/templates/
 4. Place the HTML Webpage (home.html) in the templates directory you created. --> Example: C:/User/ShockGPT/templates/home.html
