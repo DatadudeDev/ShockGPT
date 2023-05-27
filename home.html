@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat with OpenAI GPT-4</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.>
+    <title>Chat with ShockGPT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             // Get the chatbox element and the chat history element
@@ -12,10 +12,12 @@
             // Define a function to add a message to the chat history
             function addMessageToHistory(message, isUser) {
                 var messageClass = isUser ? "user-message" : "openai-message";
-                var messageElement = $("<div>").addClass(messageClass).text(mes>
-                chatHistory.append(messageElement);
+                var speakerName = isUser ? "User" : "ShockGPT";
+                var messageElement = $("<div>").addClass(messageClass).html("<strong>" + speakerName + ":</strong> " + message);
+                chatHistory.append(messageElement);  // Append the new message to the chat history
+                chatbox.scrollTop(chatbox[0].scrollHeight);  // Scroll to the bottom of the chat history
             }
-            
+
             // Keep track of the conversation history
             var conversationHistory = [];
 
@@ -26,22 +28,18 @@
                 if (userInput) {
                     addMessageToHistory(userInput, true);
                     $("#user-input").val("");
-                    
-                    
-                    // Send the user input and the conversation history to the >
+
+                    // Send the user input and the conversation history to the Flask backend and get the OpenAI response
                     $.ajax({
                         url: "/get_response",
                         type: "POST",
                         contentType: "application/json",
-                        data: JSON.stringify({userInput: userInput, conversatio>
+                        data: JSON.stringify({userInput: userInput, conversationHistory: conversationHistory}),
                         success: function(response) {
-                            // Add the OpenAI response to the chat history
-                            addMessageToHistory(response, false);
-                            // Scroll to the bottom of the chat history
-                            chatbox.scrollTop(chatbox[0].scrollHeight);
-                            // Update the conversation history
-                            conversationHistory.push(userInput);
-                            conversationHistory.push(response);
+                            var openaiResponse = response.response;
+                            var updatedConversationHistory = response.conversationHistory;
+                            addMessageToHistory(openaiResponse, false);
+                            conversationHistory = updatedConversationHistory;  // Update the conversation history
                         },
                         error: function(xhr, status, error) {
                             // Handle any errors
@@ -63,6 +61,7 @@
             text-align: center;
             border: 1px solid white;
             padding: 10px;
+            border-radius: 10px;  /* Rounded corners */
         }
         #chat-history {
             height: 700px;
@@ -72,10 +71,12 @@
         .user-message {
             text-align: left;
             color: green;
+            margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
         }
         .openai-message {
             text-align: left;
-            color: red;
+            color: white;
+            margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
         }
         #user-input {
             width: 80%;
@@ -105,12 +106,14 @@
     </style>
 </head>
 <body>
-    <h1>Chat with OpenAI GPT-4</h1>
-    <h2>Concise answers to specific questions</h2>
+    <h1>Chat with ShockGPT</h1>
+    <h2>Ask away...</h2>
     <div id="chatbox">
         <div id="chat-history"></div>
         <form id="chat-form">
-            <input type="text" color = white id="user-input" placeholder="Type >
-            <button type="submit
-                    
-                    
+            <input type="text" color="white" id="user-input" placeholder="Type your message here..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
