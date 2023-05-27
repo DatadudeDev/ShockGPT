@@ -4,7 +4,7 @@ import openai
 app = Flask(__name__)
 
 # Set the OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Define the function to generate the OpenAI API response
 def generate_response(prompt, conversation_history):
