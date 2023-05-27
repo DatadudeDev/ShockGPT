@@ -48,6 +48,11 @@
                     });
                 }
             });
+            
+            // Handle reset button click
+            $("button[type='reset']").on("click", function() {
+                location.reload();  // Reload the page
+            });
         });
     </script>
     <style>
@@ -56,7 +61,7 @@
             color: white;
         }
         #chatbox {
-            width: 500px;
+            width: 600px;
             margin: auto;
             text-align: center;
             border: 1px solid white;
@@ -74,12 +79,12 @@
             margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
         }
         .openai-message {
-            text-align: left;
+            text-align: right;
             color: white;
             margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
         }
         #user-input {
-            width: 80%;
+            width: 70%;
             padding: 5px;
             margin: 5px;
             border-radius: 5px;
@@ -87,7 +92,13 @@
             background-color: #191B1B;
             color: white;
         }
-        button[type="submit"] {
+        #chat-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button[type="submit"],
+        button[type="reset"] {
             padding: 5px 10px;
             margin: 5px;
             border: 2px solid white;
@@ -112,7 +123,10 @@
         <div id="chat-history"></div>
         <form id="chat-form">
             <input type="text" color="white" id="user-input" placeholder="Type your message here..." autocomplete="off">
-            <button type="submit">Send</button>
+            <div>
+                <button type="submit">Send</button>
+                <button type="reset">Reset</button>
+            </div>
         </form>
     </div>
 </body>
