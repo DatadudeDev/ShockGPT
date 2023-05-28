@@ -1,0 +1,5 @@
+FROM  python:3
+ADD home.html home.html
+ADD app.py app.py
+EXPOSE 3435
+ENTRYPOINT [ "python3", "app.py" ]
