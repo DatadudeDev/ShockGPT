@@ -16,6 +16,7 @@ Key Features:
  
 _______________________________________________________________________________________________________________________________________________________________________
 
-SETUP: 
+SETUP (Docker: 
 
 1. Follow these intructions https://hub.docker.com/r/datadudedev/shock-gpt
+2. Go to http://<your-LAN-IP>:3456
