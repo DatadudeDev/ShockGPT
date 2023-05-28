@@ -16,32 +16,6 @@ Key Features:
  
 _______________________________________________________________________________________________________________________________________________________________________
 
-DISCLAIMER: USE AT YOUR OWN RISK!
+SETUP: 
 
-While the bot runs locally, it interacts with OpenAI's ChatGPT which is likely recording every input and logging IP addresses, so be warned that explicit queries can draw unwanted attention if the infrastructure running ShockGPT is not adequetly secured. 
-
-Examples of harmful responses include: 
-
-1. Instructions for committing crimes in an manner which is evasive to law enforcement, including acts of violence and terrorism
-
-2. Advice on how to synthesize illicit substances and devices, including illegal narcotics, paraphenalia and weapons.  
-
-3. Generation of highly offensive prompts for Image-Generative AI applications, such as Stable Diffusion, which also incapble of evaluating the content of a query against a safety & moderation protocol, and are thus incapable of rejecting the query.  
-
-4. Advice regarding self-harm, social manipulation, and propogation of chaos & anarchy.  
-
-5. Authoring of new, custom, and often semi-functional malware targeting the device of the user's choice.  
-
-
-_______________________________________________________________________________________________________________________________________________________________________
-
-SETUP INSTRUCTIONS: 
-
-1. Install Python3, Flask and openai on a Linux OS. To install Flask, its best to use a virtual environment like conda or venv. 
-2. Place the Flask Backend Server file (app.py) in any directory ---> Example: C:/User/ShockGPT/app.py
-3. Create a folder called 'templates' in the same directory as the Flask backend file ---> Example: C:/User/ShockGPT/templates/
-4. Place the HTML Webpage (home.html) in the templates directory you created. --> Example: C:/User/ShockGPT/templates/home.html
-5. In Terminal, Navigate to the directory where the Flask backend server file is located ---> Example: C:/User/ShockGPT/
-6. Run the following command as a user (not root): 'python3 app.py'
-7. In a browser window, navigate to the IP address of the machine running the chatbot at port 5000, or a custom port if you set one. ---> Example: 192.168.3.4:5000
-8. If you encounter a connection error, it's likely a firewall rule. Ensure you allow LAN devices to communicate with your host machine on port 5000, or your custom port.
+1. Follow these intructions https://hub.docker.com/r/datadudedev/shock-gpt
