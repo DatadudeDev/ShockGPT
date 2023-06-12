@@ -1,5 +1,7 @@
 FROM  python:3
-ADD home.html home.html
-ADD app.py app.py
+COPY ./home.html /templates/home.html
+COPY ./app.py /app.py
+COPY ./req.txt /templates/req.txt
+RUN pip install -r /templates/req.txt
 EXPOSE 3435
 ENTRYPOINT [ "python3", "app.py" ]
