@@ -16,7 +16,20 @@ Key Features:
  
 _______________________________________________________________________________________________________________________________________________________________________
 
-SETUP (Docker: 
+Docker Compose: 
 
-1. Follow these intructions https://hub.docker.com/r/datadudedev/shock-gpt
-2. Go to http:// your-LAN-IP:3456
+
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  app:
+    image: datadudedev/shock-gpt:latest
+    restart: unless-stopped
+    ports:
+      - 3435:5002
+
+_______________________________________________________________________________________________________________________________________________________________________
