@@ -26,7 +26,7 @@ Docker Compose:
 >  db:
 >
 > services:
->  app:
+> app:
 >    image: datadudedev/shock-gpt:latest
 >    restart: unless-stopped
 >    ports:
