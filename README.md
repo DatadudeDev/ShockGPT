@@ -21,15 +21,15 @@ Docker Compose:
 
 > version: '2'
 > 
-> volumes:
->  nextcloud:
->  db:
+> volumes: 
+>  nextcloud: 
+>  db: 
 >
-> services:
-> app:
+> services: 
+> app: 
 >    image: datadudedev/shock-gpt:latest
 >    restart: unless-stopped
->    ports:
+>    ports: 
 >      - 3435:5002
 
 _______________________________________________________________________________________________________________________________________________________________________
