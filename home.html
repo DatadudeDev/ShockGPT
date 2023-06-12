@@ -13,9 +13,10 @@
             function addMessageToHistory(message, isUser) {
                 var messageClass = isUser ? "user-message" : "openai-message";
                 var speakerName = isUser ? "User" : "ShockGPT";
-                var messageElement = $("<div>").addClass(messageClass).html("<strong>" + speakerName + ":</strong> " + message);
-                chatHistory.append(messageElement);  // Append the new message to the chat history
-                chatbox.scrollTop(chatbox[0].scrollHeight);  // Scroll to the bottom of the chat history
+                var timestamp = new Date().toLocaleTimeString();  // Get the current timestamp
+                var messageElement = $("<div>").addClass(messageClass).html("<strong>" + " (" + timestamp + ") " + speakerName + ":</strong> <b>" + message + "</b>");
+                chatHistory.append(messageElement);
+                chatbox.scrollTop(chatbox[0].scrollHeight);
             }
 
             // Keep track of the conversation history
@@ -53,12 +54,49 @@
             $("button[type='reset']").on("click", function() {
                 location.reload();  // Reload the page
             });
+            
+            // Handle export button click
+            $("#export-button").on("click", function() {
+                var transcript = chatHistory.text();
+                downloadTranscript(transcript);
+            });
+            
+            // Function to download the chat transcript as a .txt file
+            function downloadTranscript(transcript) {
+                var element = document.createElement("a");
+                element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(transcript));
+                element.setAttribute("download", "chat_transcript.txt");
+                element.style.display = "none";
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+            // Function to download the chat transcript as a .txt file
+            function downloadTranscript(transcript) {
+                var messages = chatHistory.children('.user-message, .openai-message');
+                var formattedTranscript = '';
+
+                messages.each(function() {
+                    var messageText = $(this).text().trim();
+                formattedTranscript += messageText + '\n\n'; // Add two newlines for spacing between messages
+                });
+
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(formattedTranscript));
+                element.setAttribute('download', 'chat_transcript.txt');
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+
         });
     </script>
     <style>
         body {
-            background-color: #191B1B;
-            color: white;
+            background-image: url('https://wallpaperaccess.com/full/908953.png');
+            background-size: cover;
+            color: black;
         }
         #chatbox {
             width: 600px;
@@ -67,21 +105,31 @@
             border: 1px solid white;
             padding: 10px;
             border-radius: 10px;  /* Rounded corners */
+            background-color: rgba(25, 27, 27, 0.8);
         }
         #chat-history {
             height: 700px;
             overflow-y: scroll;
             text-align: left;
         }
+        /* Styling the scrollbar */
+        #chat-history::-webkit-scrollbar {
+            width: 10px;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+        }
+        #chat-history::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white thumb */
+            border-radius: 5px;
+        }
         .user-message {
             text-align: left;
-            color: green;
-            margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
+            color: white;
+            margin-bottom: 15px;  /* Add margin-bottom for spacing between messages */
         }
         .openai-message {
-            text-align: right;
-            color: white;
-            margin-bottom: 10px;  /* Add margin-bottom for spacing between messages */
+            text-align: left;
+            color: #B0C9FC;
+            margin-bottom: 15px;  /* Add margin-bottom for spacing between messages */
         }
         #user-input {
             width: 70%;
@@ -98,27 +146,30 @@
             justify-content: center;
         }
         button[type="submit"],
-        button[type="reset"] {
+        button[type="reset"],
+        #export-button {
             padding: 5px 10px;
             margin: 5px;
             border: 2px solid white;
             border-radius: 5px;
-            color: white;
-            background-color: blue;
+            color: black;
+            background-color: #B0C9FC;
             cursor: pointer;
         }
         h1 {
             text-align: center;
+            color: white;
         }
         h2 {
             text-align: center;
             font-size: 18px;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <h1>Chat with ShockGPT</h1>
-    <h2>Ask away...</h2>
+    <h1>I'm ShockGPT</h1>
+    <h2>Ask me anything!</h2>
     <div id="chatbox">
         <div id="chat-history"></div>
         <form id="chat-form">
@@ -126,6 +177,7 @@
             <div>
                 <button type="submit">Send</button>
                 <button type="reset">Reset</button>
+                <button id="export-button" type="button">Export Transcript</button>
             </div>
         </form>
     </div>
