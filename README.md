@@ -9,10 +9,13 @@ Docker Compose:
 ````
 version: '2'
 
+
 services:
   app:
-    image: datadudedev/shock-gpt:latest
+    image: datadudedev/shockgpt:latest
     restart: unless-stopped
+    environment:
+      - API-KEY=<YOUR API KEYE HERE>
     ports:
       - 3435:5002
       
