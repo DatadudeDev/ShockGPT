@@ -13,7 +13,7 @@ services:
     image: datadudedev/shockgpt:latest
     restart: unless-stopped
     environment:
-      - API-KEY=<YOUR API KEYE HERE>
+      - API-KEY=<YOUR API KEY HERE>
     ports:
       - 3435:5002
       
