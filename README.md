@@ -8,8 +8,6 @@ Docker Compose:
 
 ````
 version: '2'
-
-
 services:
   app:
     image: datadudedev/shockgpt:latest
