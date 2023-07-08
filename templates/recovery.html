@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery</title>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/908953.png');
+            background-size: cover;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form input {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recovery</h1>
+
+    <form method="POST" action="">
+        {{ form.username }}
+        {{ form.submit }}
+    </form>
+
+
+    <a href="{{ url_for('login') }}">Already have an account? Log In</a>
+    <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a><br>
+</body>
+
+</html>
