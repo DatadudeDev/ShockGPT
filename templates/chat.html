@@ -103,8 +103,43 @@
             background-size: cover;
             color: black;
         }
+        #button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+        }
+        button[type="submit"],
+        button[type="reset"],
+        #logout {
+            padding: 3% 4%;
+            margin: 3px;
+            border: 2px solid white;
+            border-radius: 2px;
+            color: black;
+            background-color: #B0C9FC;
+            cursor: pointer;
+            text-align: center;
+            align-items: center;
+            font-size: 300%;
+
+        }
+        #export-button {
+            padding: 3% 4%;
+            margin: 3px;
+            border: 2px solid white;
+            border-radius: 2px;
+            color: black;
+            background-color: #B0C9FC;
+            cursor: pointer;
+            text-align: center;
+            font-size: 300%;
+
+        }
         #chatbox {
-            width: 600px;
+            width: 90%;
+            height: 90%;
             margin: auto;
             text-align: center;
             border: 1px solid white;
@@ -113,7 +148,7 @@
             background-color: rgba(25, 27, 27, 0.8);
         }
         #chat-history {
-            height: 700px;
+            height: 980px;
             overflow-y: scroll;
             text-align: left;
         }
@@ -130,60 +165,30 @@
             text-align: left;
             color: white;
             margin-bottom: 15px;  /* Add margin-bottom for spacing between messages */
+            font-size: 30px;
         }
         .openai-message {
             text-align: left;
             color: #B0C9FC;
-            margin-bottom: 15px;  /* Add margin-bottom for spacing betweenmessages */
+            margin-bottom: 15px;  /* Add margin-bottom for spacing between messages */
+            font-size: 30px;
         }
         #user-input {
-            width: 70%;
-            height: 100px;  /* Adjust the height to allow for up to three lines of text */
-            font-size:150%;
+            width: 98%;
+            height: 450px;  /* Adjust the height to allow for up to three lines of text */
+            font-size:50px;
             padding: 5px;
             margin: 5px;
             border-radius: 5px;
             border: 1px solid white;
             background-color: #191B1B;
             color: white;
+
         }
         #chat-form {
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-        #button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 5px;
-        }
-        button[type="submit"],
-        button[type="reset"],
-        #logout {
-            padding: 5px 10px;
-            margin: 5px;
-            border: 2px solid white;
-            border-radius: 5px;
-            color: black;
-            background-color: #B0C9FC;
-            cursor: pointer;
-            text-align: center;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        #export-button {
-            padding: 5px 10px;
-            margin: 5px;
-            border: 2px solid white;
-            border-radius: 5px;
-            color: black;
-            background-color: #B0C9FC;
-            cursor: pointer;
-            text-align: center;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
         }
     
         h1 {
@@ -195,20 +200,22 @@
             font-size: 18px;
             color: white;
         }
+
     </style>
 </head>
 <body>
-    <h1>I'm ShockGPT</h1>
-    <h2>Ask me anything!</h2>
+    <h1 style="font-size:60px;">ShockGPT</h1>
     <div id="chatbox">
         <div id="chat-history"></div>
         <form id="chat-form">
-            <textarea id="user-input" placeholder="Type your message here..." rows="3"></textarea>
-            <div id="button-container">
+                <div id="button-container">
                 <button type="submit">Send</button>
                 <button type="reset">Reset</button>
+                <button id="export-button">Export</button>
                 <button id="logout">Logout</button>
-                <button id="export-button">Export Transcript</button>
+                
+                <textarea id="user-input" placeholder="Type your message here..." rows="3"></textarea>
+
             </div>
         </form>
     </div>
