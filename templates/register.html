@@ -19,10 +19,6 @@
             margin: 0;
         }
 
-        h1 {
-            text-align: center;
-        }
-
         form {
             display: flex;
             flex-direction: column;
@@ -38,11 +34,16 @@
             margin-top: 10px;
             color: white;
         }
+
+        h1 {
+            text-align: center;
+            color: white !important; /* Override any browser-specific styling */
+        }
     </style>
 </head>
 
 <body>
-    <h1>Register Page</h1>
+    <h1>Register</h1>
 
     <form method="POST" action="">
         {{ form.hidden_tag() }}
