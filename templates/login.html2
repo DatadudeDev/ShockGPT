@@ -34,30 +34,15 @@
             margin-top: 10px;
             color: white;
         }
-        
         h1 {
             text-align: center;
             color: white;
-        }
-        
-        @media screen and (max-width: 480px) {
-            body {
-                background-image: url('https://wallpaperaccess.com/full/908953.png');
-            }
-            
-            h1 {
-                color: white;
-            }
-            
-            form input {
-                width: 80%;
-            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Login / Sign Up</h1><br>
+    <h1>Login / Sign Up</h1>
 
     <form method="POST" action="">
         {{ form.hidden_tag() }}
@@ -66,9 +51,8 @@
         {{ form.submit }}
     </form>
 
-    <a href="{{ url_for('recovery') }}" style="color:white;">Forgot Password?</a>
-    <br><a href="{{ url_for('register') }}" style="color:white;">Don't have an account? Sign Up</a>
-    
+    <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a><br>
+    <a href="{{ url_for('recovery') }}">Forgot Password?</a><br>
 </body>
 
 </html>

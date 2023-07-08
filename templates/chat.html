@@ -78,7 +78,7 @@
 
                 messages.each(function() {
                     var messageText = $(this).text().trim();
-                formattedTranscript += messageText + '\n\n'; // Add two newlines for spacing between messages
+                    formattedTranscript += messageText + '\n\n'; // Add two newlines for spacing between messages
                 });
 
                 var element = document.createElement('a');
@@ -133,6 +133,8 @@
         }
         #user-input {
             width: 70%;
+            height: 100px;  /* Adjust the height to allow for up to three lines of text */
+            font-size:150%;
             padding: 5px;
             margin: 5px;
             border-radius: 5px;
@@ -148,6 +150,15 @@
         button[type="submit"],
         button[type="reset"],
         #export-button {
+            padding: 5px 10px;
+            margin: 5px;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: black;
+            background-color: #B0C9FC;
+            cursor: pointer;
+        }
+        #logout {
             padding: 5px 10px;
             margin: 5px;
             border: 2px solid white;
@@ -173,11 +184,11 @@
     <div id="chatbox">
         <div id="chat-history"></div>
         <form id="chat-form">
-            <input type="text" color="white" id="user-input" placeholder="Type your message here..." autocomplete="off">
+            <textarea id="user-input" placeholder="Type your message here..." rows="3"></textarea>
             <div>
                 <button type="submit">Send</button>
                 <button type="reset">Reset</button>
-                <button id="export-button" type="button">Export Transcript</button>
+                <button id="logout" href="{{ url_for('logout') }}">Logout</button>
             </div>
         </form>
     </div>

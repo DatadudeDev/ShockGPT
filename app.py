@@ -58,7 +58,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class RecoveryForm(FlaskForm):
-    username = StringField('Email address', validators = [InputRequired(), Length(min=6, max=20)], render_kw={"placeholder": "Username"})
+    username = StringField('Username', validators = [InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     submit = SubmitField('Recover Password')
 
 
