@@ -90,6 +90,11 @@
                 document.body.removeChild(element);
             }
 
+            // Handle logout button click
+            $("#logout").on("click", function() {
+                window.location.href = "{{ url_for('login') }}";  // Redirect to the "login.html" page
+            });
+
         });
     </script>
     <style>
@@ -129,7 +134,7 @@
         .openai-message {
             text-align: left;
             color: #B0C9FC;
-            margin-bottom: 15px;  /* Add margin-bottom for spacing between messages */
+            margin-bottom: 15px;  /* Add margin-bottom for spacing betweenmessages */
         }
         #user-input {
             width: 70%;
@@ -145,19 +150,17 @@
         #chat-form {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+        }
+        #button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
         }
         button[type="submit"],
         button[type="reset"],
-        #export-button {
-            padding: 5px 10px;
-            margin: 5px;
-            border: 2px solid white;
-            border-radius: 5px;
-            color: black;
-            background-color: #B0C9FC;
-            cursor: pointer;
-        }
         #logout {
             padding: 5px 10px;
             margin: 5px;
@@ -166,7 +169,23 @@
             color: black;
             background-color: #B0C9FC;
             cursor: pointer;
+            text-align: center;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
+        #export-button {
+            padding: 5px 10px;
+            margin: 5px;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: black;
+            background-color: #B0C9FC;
+            cursor: pointer;
+            text-align: center;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    
         h1 {
             text-align: center;
             color: white;
@@ -185,10 +204,11 @@
         <div id="chat-history"></div>
         <form id="chat-form">
             <textarea id="user-input" placeholder="Type your message here..." rows="3"></textarea>
-            <div>
+            <div id="button-container">
                 <button type="submit">Send</button>
                 <button type="reset">Reset</button>
-                <button id="logout" href="{{ url_for('logout') }}">Logout</button>
+                <button id="logout">Logout</button>
+                <button id="export-button">Export Transcript</button>
             </div>
         </form>
     </div>
